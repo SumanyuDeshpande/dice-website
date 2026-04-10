@@ -1,0 +1,214 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D.I.C.E. — Control the Controls</title>
+  <link rel="icon" href="assets/images/dice-logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="assets/images/dice-logo.png" alt="DICE Logo" />
+        <span>D.I.C.E.</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#download" class="nav-cta">Download</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge reveal">Next-Gen AI Assistant</div>
+      <h1 class="hero-title reveal">
+        <span class="gradient-text">D.I.C.E.</span>
+      </h1>
+      <p class="hero-subtitle reveal">Direct Integrated Control Engine</p>
+      <p class="hero-tagline reveal">"Control the Controls"</p>
+      <div class="typewriter-container reveal">
+        <span class="typewriter-prefix">Try saying → </span>
+        <span class="typewriter" id="typewriter"></span>
+        <span class="cursor">|</span>
+      </div>
+      <div class="hero-buttons reveal">
+        <a href="#download" class="btn-primary">
+          <i class="fa-solid fa-download"></i> Download for Windows
+        </a>
+        <a href="#demo" class="btn-secondary">
+          <i class="fa-solid fa-play"></i> See it in Action
+        </a>
+      </div>
+    </div>
+    <div class="hero-glow"></div>
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Why D.I.C.E.?</p>
+        <h2>Beyond "OK Google"</h2>
+        <p class="section-desc">D.I.C.E. doesn't just answer — it acts. A true AI engine built for power users and developers.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+          <h3>AI-Powered Core</h3>
+          <p>Understands context, intent, and complex commands far beyond simple voice queries.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Instant Execution</h3>
+          <p>No lag. No waiting. Commands execute in milliseconds — your system responds to you.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-terminal"></i></div>
+          <h3>Dev-First Design</h3>
+          <p>Built for developers and power users who demand full system control at their command.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Privacy First</h3>
+          <p>Runs locally on your machine. Your commands, your data — never sent to the cloud.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
+          <h3>Fully Customizable</h3>
+          <p>Define your own commands, workflows, and triggers. D.I.C.E. adapts to you.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-plug"></i></div>
+          <h3>Deep Integration</h3>
+          <p>Controls apps, files, system settings, and more — all from a single interface.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section class="demo-section" id="demo">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">See It Live</p>
+        <h2>Watch D.I.C.E. Work</h2>
+        <p class="section-desc">Real commands. Real execution. No scripts, no tricks.</p>
+      </div>
+      <div class="demo-window reveal">
+        <div class="demo-topbar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="demo-title">D.I.C.E. Terminal</span>
+        </div>
+        <div class="demo-body" id="demo-body">
+          <div class="demo-line system">▶ D.I.C.E. Engine initialized...</div>
+          <div class="demo-line system">▶ Listening for commands...</div>
+        </div>
+        <div class="demo-input-row">
+          <span class="demo-prompt">$</span>
+          <span class="demo-input" id="demo-input"></span>
+          <span class="demo-cursor">█</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="section-label">The Vision</p>
+          <h2>Built different.<br/>Built to dominate.</h2>
+          <p>D.I.C.E. was born from a simple frustration — existing AI assistants are too passive, too limited, and too dependent on the cloud. We built something different.</p>
+          <p>An engine that gives <strong>you</strong> full control. That understands what you mean, not just what you say. That executes, automates, and integrates — right on your machine.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <h3>100%</h3>
+              <p>Local Processing</p>
+            </div>
+            <div class="stat">
+              <h3>&lt;50ms</h3>
+              <p>Response Time</p>
+            </div>
+            <div class="stat">
+              <h3>∞</h3>
+              <p>Custom Commands</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="orb-container">
+            <div class="orb"></div>
+            <div class="orb-ring ring1"></div>
+            <div class="orb-ring ring2"></div>
+            <div class="orb-ring ring3"></div>
+            <div class="orb-label">D.I.C.E.<br/><span>ACTIVE</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download" id="download">
+    <div class="container">
+      <div class="download-card reveal">
+        <div class="download-glow"></div>
+        <p class="section-label">Get Started</p>
+        <h2>Ready to take control?</h2>
+        <p>Download D.I.C.E. for Windows and experience the next generation of AI control.</p>
+        <div class="download-meta">
+          <span><i class="fa-brands fa-windows"></i> Windows 10 / 11</span>
+          <span><i class="fa-solid fa-microchip"></i> x64</span>
+          <span><i class="fa-solid fa-file-zipper"></i> Installer (.exe)</span>
+        </div>
+        <a href="#" class="btn-primary btn-large">
+          <i class="fa-solid fa-download"></i> Download D.I.C.E. — Free
+        </a>
+        <p class="download-note">No account needed. No cloud. Just power.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/images/dice-logo.png" alt="DICE" />
+          <span>D.I.C.E.</span>
+        </div>
+        <p class="footer-tagline">"Control the Controls"</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 D.I.C.E. — Direct Integrated Control Engine. All rights reserved.</p>
+        <p class="footer-startup">A Startup Project. Built with ambition. 🎲</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
