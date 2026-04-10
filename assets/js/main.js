@@ -251,3 +251,41 @@ if (feedbackForm) {
     }
   });
 }
+
+// ── WAITLIST FORM ──
+const waitlistForm = document.getElementById('waitlist-form');
+const waitlistSuccess = document.getElementById('waitlist-success');
+
+if (waitlistForm) {
+  waitlistForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = waitlistForm.querySelector('.waitlist-btn');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Joining...';
+    btn.style.opacity = '0.7';
+    btn.disabled = true;
+
+    const formData = new FormData(waitlistForm);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xykbqrrj', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        waitlistForm.style.display = 'none';
+        waitlistSuccess.classList.add('show');
+      } else {
+        btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Something went wrong — try again';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Network error — try again';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+    }
+  });
+}

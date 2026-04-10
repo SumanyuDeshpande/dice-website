@@ -25,6 +25,7 @@
         <li><a href="#demo">Demo</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="founder.html">Founder</a></li>
+        <li><a href="#waitlist">Waitlist</a></li>
         <li><a href="#feedback">Feedback</a></li>
         <li><a href="#download" class="nav-cta">Download</a></li>
       </ul>
@@ -232,6 +233,74 @@
           <i class="fa-solid fa-download"></i> Download D.I.C.E. — Free
         </a>
         <p class="download-note">No account needed. No cloud. Just power.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section class="waitlist" id="waitlist">
+    <div class="container">
+      <div class="waitlist-card reveal">
+        <div class="waitlist-glow"></div>
+        <div class="waitlist-left">
+          <div class="waitlist-badge">🚀 Early Access</div>
+          <h2>Be the <span class="gradient-text">first</span> to get D.I.C.E.</h2>
+          <p>D.I.C.E. is days away from public release. Join the waitlist and get notified the moment it drops — completely free.</p>
+          <div class="waitlist-perks">
+            <div class="waitlist-perk">
+              <i class="fa-solid fa-bell"></i>
+              <span>Instant launch notification</span>
+            </div>
+            <div class="waitlist-perk">
+              <i class="fa-solid fa-star"></i>
+              <span>Early adopter status</span>
+            </div>
+            <div class="waitlist-perk">
+              <i class="fa-solid fa-bolt"></i>
+              <span>First access before public</span>
+            </div>
+            <div class="waitlist-perk">
+              <i class="fa-solid fa-tag"></i>
+              <span>Always free — no credit card</span>
+            </div>
+          </div>
+        </div>
+        <div class="waitlist-right">
+          <div class="waitlist-status">
+            <span class="waitlist-dot"></span>
+            <span>Waitlist open — joining takes 10 seconds</span>
+          </div>
+          <form id="waitlist-form" action="https://formspree.io/f/xykbqrrj" method="POST">
+            <div class="waitlist-field">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="Your name" required />
+            </div>
+            <div class="waitlist-field">
+              <label>Your Email</label>
+              <input type="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="waitlist-field">
+              <label>How did you hear about D.I.C.E.?</label>
+              <select name="source">
+                <option value="">Select one...</option>
+                <option value="College">College / University</option>
+                <option value="Friend">Friend / Word of mouth</option>
+                <option value="Social Media">Social Media</option>
+                <option value="GitHub">GitHub</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <input type="hidden" name="subject" value="New D.I.C.E. Waitlist Signup!" />
+            <button type="submit" class="btn-primary waitlist-btn">
+              <i class="fa-solid fa-rocket"></i> Join the Waitlist
+            </button>
+          </form>
+          <div class="waitlist-success" id="waitlist-success">
+            <div class="success-icon">🎲</div>
+            <h3>You're on the list!</h3>
+            <p>We'll email you the moment D.I.C.E. launches. Get ready to take control.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
