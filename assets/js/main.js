@@ -195,3 +195,59 @@ downloadBtn.addEventListener('click', (e) => {
     downloadBtn.style.boxShadow = '';
   }, 3000);
 });
+
+// ── FEEDBACK FORM ──
+const urgencySlider = document.getElementById('urgency');
+const urgencyValue = document.getElementById('urgency-value');
+
+const urgencyLabels = {
+  1: 'Just sharing 😊',
+  2: 'Minor issue 🙂',
+  3: 'Moderate ⚡',
+  4: 'Important 🚨',
+  5: 'Critical 🔥'
+};
+
+if (urgencySlider) {
+  urgencySlider.addEventListener('input', () => {
+    urgencyValue.textContent = 'Urgency: ' + urgencyLabels[urgencySlider.value];
+  });
+}
+
+// Handle form submission
+const feedbackForm = document.getElementById('feedback-form');
+const feedbackSuccess = document.getElementById('feedback-success');
+
+if (feedbackForm) {
+  feedbackForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = feedbackForm.querySelector('.feedback-btn');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    btn.style.opacity = '0.7';
+    btn.disabled = true;
+
+    const formData = new FormData(feedbackForm);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xaqlgrkq', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        feedbackForm.style.display = 'none';
+        feedbackSuccess.classList.add('show');
+      } else {
+        btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Something went wrong — try again';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Network error — try again';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+    }
+  });
+}

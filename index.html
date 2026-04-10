@@ -25,6 +25,7 @@
         <li><a href="#demo">Demo</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="founder.html">Founder</a></li>
+        <li><a href="#feedback">Feedback</a></li>
         <li><a href="#download" class="nav-cta">Download</a></li>
       </ul>
       <div class="hamburger" id="hamburger">
@@ -231,6 +232,77 @@
           <i class="fa-solid fa-download"></i> Download D.I.C.E. — Free
         </a>
         <p class="download-note">No account needed. No cloud. Just power.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section class="feedback" id="feedback">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Always Listening</p>
+        <h2>Send Us Feedback</h2>
+        <p class="section-desc">Got a complaint, suggestion, or just want to say something? We're listening 24/7. Every single message goes directly to the founder.</p>
+      </div>
+      <div class="feedback-card reveal">
+        <div class="feedback-glow"></div>
+        <div class="feedback-status">
+          <span class="feedback-dot"></span>
+          <span>Open 24/7 — Sumanyu reads every message personally</span>
+        </div>
+        <form id="feedback-form" action="https://formspree.io/f/xaqlgrkq" method="POST">
+          <div class="feedback-row">
+            <div class="feedback-field">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="What should we call you?" required />
+            </div>
+            <div class="feedback-field">
+              <label>Your Email</label>
+              <input type="email" name="email" placeholder="So we can reply to you" required />
+            </div>
+          </div>
+          <div class="feedback-field">
+            <label>Type</label>
+            <div class="feedback-types">
+              <input type="radio" name="type" id="type-feedback" value="Feedback" checked />
+              <label for="type-feedback" class="type-label">💬 Feedback</label>
+              <input type="radio" name="type" id="type-complaint" value="Complaint" />
+              <label for="type-complaint" class="type-label">🚨 Complaint</label>
+              <input type="radio" name="type" id="type-suggestion" value="Suggestion" />
+              <label for="type-suggestion" class="type-label">💡 Suggestion</label>
+              <input type="radio" name="type" id="type-other" value="Other" />
+              <label for="type-other" class="type-label">✉️ Other</label>
+            </div>
+          </div>
+          <div class="feedback-field">
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="What's this about?" required />
+          </div>
+          <div class="feedback-field">
+            <label>Your Message</label>
+            <textarea name="message" rows="5" placeholder="Say everything. We're listening..." required></textarea>
+          </div>
+          <div class="feedback-field">
+            <label>How urgent is this?</label>
+            <div class="urgency-slider-wrap">
+              <input type="range" name="urgency" id="urgency" min="1" max="5" value="3" class="urgency-slider"/>
+              <div class="urgency-labels">
+                <span>Just sharing</span>
+                <span>Moderate</span>
+                <span>🔥 Critical</span>
+              </div>
+              <p class="urgency-value" id="urgency-value">Urgency: Moderate</p>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary feedback-btn">
+            <i class="fa-solid fa-paper-plane"></i> Send to Founder
+          </button>
+        </form>
+        <div class="feedback-success" id="feedback-success">
+          <div class="success-icon">🎲</div>
+          <h3>Message Received!</h3>
+          <p>Sumanyu will read this personally. Thank you for helping make D.I.C.E. better.</p>
+        </div>
       </div>
     </div>
   </section>

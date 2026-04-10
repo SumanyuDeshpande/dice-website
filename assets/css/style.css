@@ -512,3 +512,177 @@ section { padding: 7rem 0; }
   .founder-badge { justify-content: center; }
   .founder-socials { justify-content: center; }
 }
+
+/* ── FEEDBACK ── */
+.feedback { background: var(--bg); }
+.feedback-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.feedback-glow {
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(108,99,255,0.07), transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.feedback-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.feedback-dot {
+  width: 8px; height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(74,222,128,0.6);
+  animation: orbPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.feedback-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.feedback-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+.feedback-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.feedback-field input,
+.feedback-field textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  outline: none;
+  resize: none;
+}
+.feedback-field input:focus,
+.feedback-field textarea:focus {
+  border-color: var(--accent);
+  background: rgba(108,99,255,0.05);
+  box-shadow: 0 0 0 3px rgba(108,99,255,0.1);
+}
+.feedback-field input::placeholder,
+.feedback-field textarea::placeholder {
+  color: rgba(148,163,184,0.5);
+}
+
+/* ── FEEDBACK TYPES ── */
+.feedback-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+.feedback-types input[type="radio"] { display: none; }
+.type-label {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+.feedback-types input[type="radio"]:checked + .type-label {
+  background: rgba(108,99,255,0.15);
+  border-color: var(--accent);
+  color: var(--accent2);
+}
+.type-label:hover {
+  border-color: rgba(108,99,255,0.3);
+  color: var(--text);
+}
+
+/* ── URGENCY SLIDER ── */
+.urgency-slider-wrap { display: flex; flex-direction: column; gap: 0.5rem; }
+.urgency-slider {
+  -webkit-appearance: none;
+  width: 100%; height: 6px;
+  border-radius: 10px;
+  background: linear-gradient(to right, var(--accent), #a78bfa, #f87171);
+  outline: none;
+  cursor: pointer;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+.urgency-slider:focus { box-shadow: none !important; border: none !important; }
+.urgency-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(108,99,255,0.5);
+  cursor: pointer;
+  border: 2px solid var(--accent);
+}
+.urgency-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.urgency-value {
+  font-size: 0.82rem;
+  color: var(--accent2);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ── SUBMIT BUTTON ── */
+.feedback-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+  font-size: 1rem !important;
+  padding: 1rem !important;
+}
+
+/* ── SUCCESS STATE ── */
+.feedback-success {
+  display: none;
+  text-align: center;
+  padding: 3rem 0;
+}
+.feedback-success.show { display: block; }
+.success-icon { font-size: 4rem; margin-bottom: 1rem; }
+.feedback-success h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem; font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.feedback-success p { color: var(--text-muted); font-size: 1rem; }
+
+/* ── FEEDBACK RESPONSIVE ── */
+@media (max-width: 768px) {
+  .feedback-card { padding: 2rem 1.5rem; }
+  .feedback-row { grid-template-columns: 1fr; }
+}
