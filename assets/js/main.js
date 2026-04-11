@@ -178,23 +178,6 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-// ── COMING SOON DOWNLOAD ──
-const downloadBtn = document.querySelector('.btn-large');
-
-downloadBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  downloadBtn.innerHTML = '🎲 Coming Soon — Stay Tuned!';
-  downloadBtn.style.background = 'linear-gradient(135deg, #1a1a3e, #2d2d5e)';
-  downloadBtn.style.cursor = 'default';
-  downloadBtn.style.boxShadow = 'none';
-
-  setTimeout(() => {
-    downloadBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download D.I.C.E. — Free';
-    downloadBtn.style.background = '';
-    downloadBtn.style.cursor = 'pointer';
-    downloadBtn.style.boxShadow = '';
-  }, 3000);
-});
 
 // ── FEEDBACK FORM ──
 const urgencySlider = document.getElementById('urgency');
