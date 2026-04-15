@@ -1,0 +1,140 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D.I.C.E. Documentation</title>
+  <link rel="icon" href="assets/images/dice-logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/images/dice-logo.png" alt="DICE Logo" />
+        <span>D.I.C.E.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#demo">Demo</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="founder.html">Founder</a></li>
+        <li><a href="docs.html" style="color:var(--accent2)">Docs</a></li>
+        <li><a href="index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="fp-hero">
+    <div class="docs-hero-content">
+      <div class="docs-icon reveal">
+        <i class="fa-solid fa-book-open"></i>
+      </div>
+      <p class="section-label reveal">Official Documentation</p>
+      <h1 class="reveal">
+        <span class="gradient-text">D.I.C.E.</span> Docs
+      </h1>
+      <p class="fp-role reveal">Everything you need to install, configure and control D.I.C.E.</p>
+
+      <div class="docs-coming-card reveal">
+        <div class="docs-coming-glow"></div>
+        <div class="docs-coming-icon">📄</div>
+        <h2>Documentation Coming Soon</h2>
+        <p>The full documentation — including step-by-step installation guide, direct copy-paste commands, configuration walkthrough, and usage manual — will be released a few days before the official product launch.</p>
+        <div class="docs-release-badge">
+          <i class="fa-solid fa-clock"></i>
+          Dropping before Mid-June 2026 Launch
+        </div>
+        <div class="docs-divider"></div>
+        <p class="docs-waitlist-note">Want to be notified the moment docs and the app go live?</p>
+        <a href="index.html#waitlist" class="btn-primary">
+          <i class="fa-solid fa-bell"></i> Join the Waitlist
+        </a>
+      </div>
+
+      <div class="docs-preview-grid reveal">
+        <div class="docs-preview-card">
+          <i class="fa-solid fa-download"></i>
+          <h4>Installation Guide</h4>
+          <p>Step-by-step installer walkthrough for Windows 11</p>
+          <span class="docs-tag">Coming Soon</span>
+        </div>
+        <div class="docs-preview-card">
+          <i class="fa-solid fa-terminal"></i>
+          <h4>Command Reference</h4>
+          <p>Full list of D.I.C.E. commands with copy-paste examples</p>
+          <span class="docs-tag">Coming Soon</span>
+        </div>
+        <div class="docs-preview-card">
+          <i class="fa-solid fa-sliders"></i>
+          <h4>Configuration</h4>
+          <p>How to customize D.I.C.E. to your workflow</p>
+          <span class="docs-tag">Coming Soon</span>
+        </div>
+        <div class="docs-preview-card">
+          <i class="fa-solid fa-microphone"></i>
+          <h4>Voice Commands</h4>
+          <p>Complete voice command guide and wake word setup</p>
+          <span class="docs-tag">Coming Soon</span>
+        </div>
+        <div class="docs-preview-card">
+          <i class="fa-solid fa-bug"></i>
+          <h4>Troubleshooting</h4>
+          <p>Common issues and how to fix them instantly</p>
+          <span class="docs-tag">Coming Soon</span>
+        </div>
+        <div class="docs-preview-card">
+          <i class="fa-solid fa-rocket"></i>
+          <h4>Quick Start</h4>
+          <p>Get D.I.C.E. running in under 5 minutes</p>
+          <span class="docs-tag">Coming Soon</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/images/dice-logo.png" alt="DICE" />
+          <span>D.I.C.E.</span>
+        </div>
+        <p class="footer-tagline">"Control the Controls"</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 D.I.C.E. — Direct Integrated Control Engine. All rights reserved.</p>
+        <p class="footer-startup">A Startup Project. Built with ambition. 🎲</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.add('scrolled');
+    });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.addEventListener('click', (e) => { if (e.target.tagName === 'A') navLinks.classList.remove('open'); });
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
