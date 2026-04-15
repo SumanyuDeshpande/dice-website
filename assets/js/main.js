@@ -291,3 +291,21 @@ faqItems.forEach(item => {
     }
   });
 });
+
+// ── COMING SOON DOWNLOAD ──
+const downloadBtn = document.getElementById('download-btn');
+
+if (downloadBtn) {
+  downloadBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    downloadBtn.innerHTML = '🎲 Mid/End June 2026 — Worth the Wait!';
+    downloadBtn.style.background = 'linear-gradient(135deg, #1a1a3e, #2d2d5e)';
+    downloadBtn.style.boxShadow = 'none';
+
+    setTimeout(() => {
+      downloadBtn.innerHTML = '<i class="fa-solid fa-clock"></i> Dropping Mid/End June 2026 — Stay Ready';
+      downloadBtn.style.background = '';
+      downloadBtn.style.boxShadow = '';
+    }, 3000);
+  });
+}
