@@ -41,6 +41,7 @@
       </div>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
+        <li><a href="#playground">Playground</a></li>
         <li><a href="#demo">Demo</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="docs.html">Docs</a></li>
@@ -215,6 +216,50 @@
             <div class="orb-ring ring2"></div>
             <div class="orb-ring ring3"></div>
             <div class="orb-label">D.I.C.E.<br/><span>ACTIVE</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYGROUND -->
+  <section class="playground" id="playground">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Try It Now</p>
+        <h2>D.I.C.E. Command Playground</h2>
+        <p class="section-desc">Type any command below and feel D.I.C.E. respond — live, right here on the website.</p>
+      </div>
+      <div class="playground-wrap reveal">
+        <div class="pg-suggestions">
+          <span class="pg-suggestions-label">Try these →</span>
+          <button class="pg-suggestion">What time is it</button>
+          <button class="pg-suggestion">Weather</button>
+          <button class="pg-suggestion">Battery</button>
+          <button class="pg-suggestion">Volume up</button>
+          <button class="pg-suggestion">Set a timer for 5 minutes</button>
+          <button class="pg-suggestion">Translate hello to Tamil</button>
+          <button class="pg-suggestion">What is 15 percent of 3000</button>
+          <button class="pg-suggestion">Lock screen</button>
+        </div>
+        <div class="playground-window">
+          <div class="demo-topbar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="demo-title">D.I.C.E. Command Playground — Interactive</span>
+          </div>
+          <div class="playground-body" id="playground-body">
+            <div class="pg-line pg-system">▶ D.I.C.E. Playground initialized...</div>
+            <div class="pg-line pg-system">▶ Type any command below or click a suggestion above.</div>
+            <div class="pg-line pg-system">▶ Try: "weather", "battery", "volume up", "what time is it"</div>
+          </div>
+          <div class="playground-input-row">
+            <span class="pg-input-prompt">you →</span>
+            <input type="text" id="playground-input" placeholder="Type a command and press Enter..." autocomplete="off" />
+            <button id="playground-send" class="pg-send-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
           </div>
         </div>
       </div>
