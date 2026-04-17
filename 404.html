@@ -1,0 +1,102 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Page Not Found | D.I.C.E.</title>
+  <link rel="icon" href="assets/images/dice-logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a class="nav-logo" href="index.html">
+        <img src="assets/images/dice-logo.png" alt="DICE Logo" />
+        <span>D.I.C.E.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#demo">Demo</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="founder.html">Founder</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="index.html#waitlist">Waitlist</a></li>
+        <li><a href="index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 404 CONTENT -->
+  <section class="not-found">
+    <canvas id="particles-canvas"></canvas>
+    <div class="not-found-content">
+      <div class="not-found-dice reveal">🎲</div>
+      <h1 class="reveal"><span class="gradient-text">404</span></h1>
+      <h2 class="reveal">Command Not Found.</h2>
+      <p class="reveal">Looks like D.I.C.E. couldn't execute this one.<br/>This page doesn't exist — but everything else does.</p>
+      <div class="not-found-terminal reveal">
+        <div class="demo-topbar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="demo-title">D.I.C.E. Terminal</span>
+        </div>
+        <div class="not-found-terminal-body">
+          <p><span class="nt-prompt">$</span> <span class="nt-cmd">dice navigate</span> <span class="nt-arg">unknown-page</span></p>
+          <p class="nt-error">✗ Error: Page not found in system registry</p>
+          <p class="nt-suggestion">→ Suggestion: Return to base and try again</p>
+          <p class="nt-blink">▶ Awaiting your command...<span class="cursor">|</span></p>
+        </div>
+      </div>
+      <div class="not-found-buttons reveal">
+        <a href="index.html" class="btn-primary">
+          <i class="fa-solid fa-house"></i> Back to Home
+        </a>
+        <a href="index.html#download" class="btn-secondary">
+          <i class="fa-solid fa-download"></i> Get D.I.C.E.
+        </a>
+      </div>
+    </div>
+    <div class="hero-glow"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/images/dice-logo.png" alt="DICE" />
+          <span>D.I.C.E.</span>
+        </div>
+        <p class="footer-tagline">"Control the Controls"</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 D.I.C.E. — Direct Integrated Control Engine. All rights reserved.</p>
+        <p class="footer-startup">A Startup Project. Built with ambition. 🎲</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/particles.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.addEventListener('click', (e) => { if (e.target.tagName === 'A') navLinks.classList.remove('open'); });
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
