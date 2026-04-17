@@ -310,3 +310,55 @@ if (downloadBtn) {
   });
 }
 
+// ── EASTER EGG (Konami Code) ──
+const konamiCode = [
+  'ArrowUp','ArrowUp','ArrowDown','ArrowDown',
+  'ArrowLeft','ArrowRight','ArrowLeft','ArrowRight',
+  'b','a'
+];
+let konamiIndex = 0;
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === konamiCode[konamiIndex]) {
+    konamiIndex++;
+    if (konamiIndex === konamiCode.length) {
+      triggerEasterEgg();
+      konamiIndex = 0;
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
+
+function triggerEasterEgg() {
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'easter-egg-overlay';
+  overlay.innerHTML = `
+    <div class="ee-box">
+      <div class="ee-top">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="ee-title">D.I.C.E. — Classified Message</span>
+      </div>
+      <div class="ee-body">
+        <p class="ee-line1">🎲 <span class="gradient-text">D.I.C.E.</span> Secret Channel — Activated</p>
+        <p class="ee-line2">// ACCESS LEVEL: ABOVE AVERAGE</p>
+        <p class="ee-message">"You weren't supposed to find this…<br/>But since you did — you're officially smarter than average 😌"</p>
+        <p class="ee-sign">— Sumanyu, Founder of D.I.C.E.</p>
+        <p class="ee-note">↑↑↓↓←→←→BA — Now you know the secret. 🎲</p>
+        <button class="btn-primary ee-close" onclick="document.getElementById('easter-egg-overlay').remove()">
+          <i class="fa-solid fa-xmark"></i> Close Channel
+        </button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  // Auto close after 15 seconds
+  setTimeout(() => {
+    const el = document.getElementById('easter-egg-overlay');
+    if (el) el.remove();
+  }, 15000);
+}

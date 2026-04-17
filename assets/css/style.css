@@ -1167,3 +1167,83 @@ section { padding: 7rem 0; }
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* ── EASTER EGG ── */
+#easter-egg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInDown 0.4s ease forwards;
+}
+.ee-box {
+  background: #0d0d16;
+  border: 1px solid rgba(108,99,255,0.4);
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 560px;
+  width: 90%;
+  box-shadow: 0 0 80px rgba(108,99,255,0.3);
+}
+.ee-top {
+  background: #161622;
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ee-title {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+.ee-body {
+  padding: 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.ee-line1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.ee-line2 {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #4ade80;
+  letter-spacing: 2px;
+}
+.ee-message {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.8;
+  background: rgba(108,99,255,0.08);
+  border: 1px solid rgba(108,99,255,0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.ee-sign {
+  color: var(--accent2);
+  font-size: 0.88rem;
+  font-style: italic;
+}
+.ee-note {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+.ee-close {
+  margin: 0.5rem auto 0;
+  width: fit-content;
+}
